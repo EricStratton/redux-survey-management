@@ -17,7 +17,7 @@ function SurveyList(props) {
 }
 
 SurveyList.propTypes = {
-  kegList: PropTypes.object,
+  surveyList: PropTypes.object,
   onSurveySelection: PropTypes.func
 };
 

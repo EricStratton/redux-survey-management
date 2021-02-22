@@ -16,6 +16,7 @@ function SurveyDetail(props) {
       <hr />
       <div style={myStyledSurveyDetail}>
         <h3>{survey.name}</h3>
+        <h4>{survey.topic}</h4>
       </div>
       <button onClick={props.onClickEdit}>Update</button>
       <button onClick={ () => onClickingDelete(survey.id)}>Remove Survey</button>

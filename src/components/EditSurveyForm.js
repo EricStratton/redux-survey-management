@@ -14,7 +14,7 @@ function EditSurveyForm(props) {
     })
     return (
       <>
-        <ReuseableForm
+        <ReusableForm
           formSubmissionHandler={handleEditSurveyFormSubmission}
           buttonText="Update Survey" />
       </>
