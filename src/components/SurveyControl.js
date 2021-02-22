@@ -1,9 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import SurveyList from './SurveyList';
+import SurveyDetail from './SurveyDetail';
+import EditSurveyForm from './EditSurveyForm';
+import NewSurveyForm from './NewSurveyForm';
+import { connect } from 'react-redux';
+import * as a from './../actions';
 
 class SurveyControl extends React.Component {
 
-  handleAddingNewSurvey = (newSurvey) => {
+  handleAddingNewSurveyToList = (newSurvey) => {
     const { dispatch } = this.props;
     const action = a.addSurvey(newSurvey);
     dispatch(action);
@@ -17,7 +23,33 @@ class SurveyControl extends React.Component {
     const action = a.selectSurvey(selectedSurvey);
     dispatch(action);
   }
+
+  handleEditingSurveyInList = (surveyToEdit) => {
+    const { dispatch } = this.props;
+    const action = a.addSurvey(surveyToEdit);
+    dispatch(action);
+    const action2 = a.deselectSurvey();
+    dispatch(action2);
+    if (this.props.editing) {
+      const action3 = a.toggleEdit();
+      dispatch(action3);
+    }
+  }
+
+  handleDeletingSurvey = (id) => {
+    const { dispatch } = this.props;
+    const action = a.deleteKeg(id);
+    dispatch(action);
+    const action2 = a.deselectKeg();
+    dispatch(action2);
+  }
   
+  handleEditClick = () => {
+    const { dispatch } = this.props;
+    const action = a.toggleEdit();
+    dispatch(action);
+  }
+
   handleClick = () => {
     if (this.props.selectedSurvey != null) {
       const { dispatch } = this.props;
@@ -38,11 +70,14 @@ class SurveyControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.props.editing) {
-
+      currentlyVisibleState = <EditSurveyForm survey={ this.props.selectSurvey } onEditSurvey={ this.handleEditingSurveyInList } />
+      buttonText = "Return to Survey List";
     } else if (this.props.selectedSurvey != null) {
-
+      currentlyVisibleState = <SurveyDetail survey={ this.props.selectSurvey } />
+      buttonText = "Return to Survey List";
     } else if (this.props.formVisibleOnPage) {
-
+      currentlyVisibleState = <NewSurveyForm onNewFormCreation={ this.handleAddingNewSurveyToList } />
+      buttonText = "Return to Survey List";
     } else {
       currentlyVisibleState = <SurveyList surveyList={ this.props.mainSurveyList } onSurveySelection={ this.handleChangingSelectedSurvey } />
       buttonText = "New Survey";
@@ -57,7 +92,10 @@ class SurveyControl extends React.Component {
 }
 
 SurveyControl.propTypes = {
-  mainSurveyList: PropTypes.object
+  mainSurveyList: PropTypes.object,
+  selectedSurvey: PropTypes.object,
+  formVisibleOnPage: PropTypes.bool,
+  editing: PropTypes.bool
 }
 
 const mapStateToProps = state => {
