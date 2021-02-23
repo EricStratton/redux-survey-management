@@ -9,6 +9,17 @@ describe('surveyListReducer', () => {
     id: 1
   }
 
+  const currentState = {
+    1: {
+      name: 'Wotuneed?',
+      topic: 'School Supplies',
+      id: 1 }, 
+    2: {
+      name: 'UGud?',
+      topic: 'No',
+      id: 2 }
+  }
+    
   test('Should return default state if no action is passed', () => {
     expect(surveyListReducer({}, { type: null })).toEqual({});
   });
@@ -29,5 +40,18 @@ describe('surveyListReducer', () => {
       }
     });
   });
+
+  test('Should delete a survey from mainSurveyList', () => {
+      action = {
+        type: 'DELETE_SURVEY',
+        id: 1
+      };
+    expect(surveyListReducer(currentState, action)).toEqual({
+      2: {
+      name: 'UGud?', 
+      topic: 'No',
+      id: 2 }
+    });
+  })
 
 });
