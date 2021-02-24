@@ -63,7 +63,7 @@ class SurveyControl extends React.Component {
       const { dispatch } = this.props;
       const action3 = a.toggleForm();
       dispatch(action3);
-    };
+    }
   }
 
   render() {
