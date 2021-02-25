@@ -1,10 +1,9 @@
-
 import * as c from './ActionTypes';
 
 export const addSurvey = (Survey) => {
   const { name, topic, id } = Survey;
   return {
-    type: c.ADD_Survey,
+    type: c.ADD_SURVEY,
     name,
     topic,
     id
@@ -12,7 +11,7 @@ export const addSurvey = (Survey) => {
 };
 
 export const deleteSurvey = id => ({
-  type: c.DELETE_Survey,
+  type: c.DELETE_SURVEY,
   id
 });
 
@@ -24,7 +23,7 @@ export const toggleForm = () => ({
 export const selectSurvey = (selectedSurvey) => {
   const { name, topic, id } = selectedSurvey;
   return {
-    type: c.SELECT_Survey,
+    type: c.SELECT_SURVEY,
     name,
     topic,
     id
@@ -32,7 +31,7 @@ export const selectSurvey = (selectedSurvey) => {
 }
 
 export const deselectSurvey = () => ({
-  type: c.DESELECT_Survey
+  type: c.DESELECT_SURVEY
 });
 
 export const toggleEdit = () => ({
