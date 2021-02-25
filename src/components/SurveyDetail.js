@@ -6,7 +6,7 @@ function SurveyDetail(props) {
     paddingLeft: '10px'
   };
 
-  const { survey, onClickingDelete, onClickingEdit } = props;
+  const { survey, onClickingDelete } = props;
 
   return ( 
     <>
@@ -18,7 +18,7 @@ function SurveyDetail(props) {
         <h3>{survey.name}</h3>
         <h4>{survey.topic}</h4>
       </div>
-      <button onClick={props.onClickEdit}>Update</button>
+      <button onClick={ props.onClickingEdit }>Update</button>
       <button onClick={ () => onClickingDelete(survey.id)}>Remove Survey</button>
     </>
   )
@@ -27,7 +27,7 @@ function SurveyDetail(props) {
 SurveyDetail.propTypes = {
   survey: PropTypes.object,
   onClickingDelete: PropTypes.func,
-  onClickingEdit: PropTypes.func,
+  onClickingEdit: PropTypes.func
 };
 
 export default SurveyDetail;

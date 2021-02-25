@@ -12,6 +12,7 @@ function EditSurveyForm(props) {
       topic: event.target.topic.value,
       id: survey.id
     })
+  }
     return (
       <>
         <ReusableForm
@@ -20,7 +21,6 @@ function EditSurveyForm(props) {
       </>
     );
   }
-}
 
 EditSurveyForm.propTypes = {
   survey: PropTypes.object,

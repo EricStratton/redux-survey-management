@@ -73,7 +73,7 @@ class SurveyControl extends React.Component {
       currentlyVisibleState = <EditSurveyForm survey={ this.props.selectedSurvey } onEditSurvey={ this.handleEditingSurveyInList } />
       buttonText = "Return to Survey List";
     } else if (this.props.selectedSurvey != null) {
-      currentlyVisibleState = <SurveyDetail survey={ this.props.selectedSurvey } />
+      currentlyVisibleState = <SurveyDetail survey={ this.props.selectedSurvey } onClickingEdit={ this.handleEditClick } onClickingDelete={ this.handleDeletingSurvey }/>
       buttonText = "Return to Survey List";
     } else if (this.props.formVisibleOnPage) {
       currentlyVisibleState = <NewSurveyForm onNewSurveyCreation={ this.handleAddingNewSurveyToList } />
