@@ -1,7 +1,7 @@
 import formVisibleReducer from './form-visible-reducer';
 import surveyListReducer from './survey-list-reducer';
 import selectedSurveyReducer from './selected-survey-reducer';
-import editFormReducer from './edit-form-reducer';
+import editFormReducer from './edit-survey-reducer';
 import { combineReducers } from 'redux';
 
 

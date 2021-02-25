@@ -10,7 +10,7 @@ function SurveyDetail(props) {
 
   return ( 
     <>
-      <div style={myStyledKegDetail}>
+      <div style={myStyledSurveyDetail}>
         <h3>Survey Details</h3>
       </div>
       <hr />
@@ -25,7 +25,7 @@ function SurveyDetail(props) {
 }
 
 SurveyDetail.propTypes = {
-  survey: propTypes.object,
+  survey: PropTypes.object,
   onClickingDelete: PropTypes.func,
   onClickingEdit: PropTypes.func,
 };

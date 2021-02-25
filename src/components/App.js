@@ -5,7 +5,7 @@ import SurveyControl from './SurveyControl';
 function App() {
   return (
     <>
-      <Header />
+    <Header />
       <SurveyControl />
     </>
   );

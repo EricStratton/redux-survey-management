@@ -38,9 +38,9 @@ class SurveyControl extends React.Component {
 
   handleDeletingSurvey = (id) => {
     const { dispatch } = this.props;
-    const action = a.deleteKeg(id);
+    const action = a.deleteSurvey(id);
     dispatch(action);
-    const action2 = a.deselectKeg();
+    const action2 = a.deselectSurvey();
     dispatch(action2);
   }
   
@@ -76,16 +76,16 @@ class SurveyControl extends React.Component {
       currentlyVisibleState = <SurveyDetail survey={ this.props.selectSurvey } />
       buttonText = "Return to Survey List";
     } else if (this.props.formVisibleOnPage) {
-      currentlyVisibleState = <NewSurveyForm onNewFormCreation={ this.handleAddingNewSurveyToList } />
+      currentlyVisibleState = <NewSurveyForm onNewSurveyCreation={ this.handleAddingNewSurveyToList } />
       buttonText = "Return to Survey List";
     } else {
-      currentlyVisibleState = <SurveyList surveyList={ this.props.mainSurveyList } onSurveySelection={ this.handleChangingSelectedSurvey } />
+      currentlyVisibleState = <SurveyList surveyList={this.props.mainSurveyList} onSurveySelection={this.handleChangingSelectedSurvey} />
       buttonText = "New Survey";
     }
     return (
       <>
         { currentlyVisibleState }
-        <button onClick={ this.handleClick }>{ buttonText }</button>
+        <button onClick={this.handleClick}>{buttonText}</button>
       </>
     )
   }

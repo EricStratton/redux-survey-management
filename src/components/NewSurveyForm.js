@@ -8,7 +8,7 @@ function NewSurveyForm(props) {
     event.preventDefault();
     props.onNewSurveyCreation({
       name: event.target.name.value,
-      topic: event.target.brand.value,
+      topic: event.target.topic.value,
       id: v4()
     });
   }
