@@ -1,3 +1,5 @@
+import * as c from './../actions/ActionTypes';
+
 export default (state = {}, action) => {
   const { name, topic, id } = action;
   switch(action.type) {

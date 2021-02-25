@@ -1,4 +1,4 @@
-import { createStore } from "redux";
+import * as c from './../actions/ActionTypes';
 
 export default (state = null, action) => {
   const { name, topic, id } = action;
