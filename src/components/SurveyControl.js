@@ -70,10 +70,10 @@ class SurveyControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.props.editing) {
-      currentlyVisibleState = <EditSurveyForm survey={ this.props.selectSurvey } onEditSurvey={ this.handleEditingSurveyInList } />
+      currentlyVisibleState = <EditSurveyForm survey={ this.props.selectedSurvey } onEditSurvey={ this.handleEditingSurveyInList } />
       buttonText = "Return to Survey List";
     } else if (this.props.selectedSurvey != null) {
-      currentlyVisibleState = <SurveyDetail survey={ this.props.selectSurvey } />
+      currentlyVisibleState = <SurveyDetail survey={ this.props.selectedSurvey } />
       buttonText = "Return to Survey List";
     } else if (this.props.formVisibleOnPage) {
       currentlyVisibleState = <NewSurveyForm onNewSurveyCreation={ this.handleAddingNewSurveyToList } />
@@ -102,7 +102,7 @@ const mapStateToProps = state => {
   return {
     mainSurveyList: state.mainSurveyList,
     formVisibleOnPage: state.formVisibleOnPage,
-    selectedSurvey: state.selectSurvey,
+    selectedSurvey: state.selectedSurvey,
     editing: state.editing
   }
 }
