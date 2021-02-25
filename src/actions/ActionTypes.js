@@ -1,0 +1,6 @@
+export const ADD_SURVEY = 'ADD_SURVEY';
+export const DELETE_SURVEY = 'DELETE_SURVEY';
+export const TOGGLE_FORM = 'TOGGLE_FORM';
+export const SELECT_SURVEY = 'SELECT_SURVEY';
+export const DESELECT_SURVEY = 'DESELECT_SURVEY';
+export const TOGGLE_EDIT = 'TOGGLE_EDIT';
