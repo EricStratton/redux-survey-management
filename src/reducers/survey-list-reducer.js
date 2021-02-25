@@ -3,7 +3,7 @@ import * as c from './../actions/ActionTypes';
 export default (state = {}, action) => {
   const { name, topic, id } = action;
   switch(action.type) {
-    case "ADD_SURVEY":
+    case c.ADD_SURVEY:
       return Object.assign({}, state, {
         [id]: {
           name,
@@ -11,7 +11,7 @@ export default (state = {}, action) => {
           id
         }
       });
-    case "DELETE_SURVEY":
+    case c.DELETE_SURVEY:
       let newState = { ...state };
       delete newState[id];
       return newState;
