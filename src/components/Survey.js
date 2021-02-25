@@ -12,7 +12,6 @@ function Survey(props) {
         <div onClick={() => props.whenSurveyClicked(props.id)}>
           <h3>{props.name}</h3>
           <h4>{props.topic}</h4>
-          {/* {surveyStatus} */}
         </div>
       </div>
       <hr />

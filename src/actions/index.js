@@ -4,7 +4,7 @@ export const addSurvey = (Survey) => {
   const { name, topic, id } = Survey;
   return {
     type: c.ADD_SURVEY,
-    name: name,
+    name,
     topic,
     id
   }
